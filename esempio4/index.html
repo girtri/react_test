@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>React Element</title>
+    </head>
+    <body>
+        <div id="sample"></div>
+
+        <!-- librerie react -->
+        <script src="../lib/react.js"></script>
+        <script src="../lib/react-dom.js"></script>
+        <script src="../lib/babel.min.js"></script>
+
+        <!-- app code -->
+        <script type="text/babel">
+ 
+            var h1 = React.createElement('h1', { style: { fontSize: 'larger'} }, 'Titolo');
+            var p1 = React.createElement('p', { className: 'text-info' }, 'Testo primo paragrafo');
+            var p2 = React.createElement('p', { className: 'text-info' }, 'Testo altro paragrafo');
+            var article = React.createElement('article', { className: 'container' }, [h1, p1, p2]);
+            
+            ReactDOM.render(article, document.getElementById('sample'));
+ 
+        </script>
+    </body>
+</html>

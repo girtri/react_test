@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Event Demo</title>
+    </head>
+    <body>
+        <div id="like_sample"></div>
+
+        <!-- librerie react -->
+        <script src="../lib/react.js"></script>
+        <script src="../lib/react-dom.js"></script>
+        <script src="../lib/babel.min.js"></script>
+
+        <!-- app code -->
+        <script type="text/babel">
+ 
+            var LikeButton = React.createClass({
+
+                getInitialState: function() {
+                    return { liked: false };
+                },
+
+                doLike: function() {
+                    this.setState({ liked: true });
+                },
+
+                render: function() {
+                    if (this.state.liked)
+                        return <div>Ti piace!</div>
+                    else
+                        return <a href="#" onClick={this.doLike}>Mi piace</a>
+                }
+            });
+ 
+            ReactDOM.render(<LikeButton />, document.getElementById("like_sample")); 
+ 
+        </script>
+    </body>
+</html>
