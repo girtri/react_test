@@ -18,7 +18,7 @@
             var LikeButton = React.createClass({
 
                 getInitialState: function() {
-                    return { liked: false };
+                    return { liked: false, init: "ciao" };
                 },
 
                 doLike: function() {
@@ -27,9 +27,15 @@
 
                 render: function() {
                     if (this.state.liked)
-                        return <div>Ti piace!</div>
+                        return  <div>
+                                    Ti piace!
+                                    <div>altro valore: {this.state.init}</div>
+                                </div>
                     else
-                        return <a href="#" onClick={this.doLike}>Mi piace</a>
+                        return <div>
+                                    <a href="#" onClick={this.doLike}>Mi piace</a>
+                                    <div>altro valore: {this.state.init}</div>
+                                </div>
                 }
             });
  
